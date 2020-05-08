@@ -5,23 +5,23 @@
           class="navbar navbar-expand-md position-fixed w-100 flex-column flex-md-row justify-content-between"
         >
           <div class="nav-left">
-            <a href="#" class="navbar-brand">
-              <img src="./images/logo.svg" alt=""
-            /></a>
-            <a href="#" class="navbar-brand">Dream Home</a>
+          <%= link_to image_tag("logo.svg", alt: 'logo'), '#', class: 'navbar_brand'%>
+
+        <%= link_to 'Dream Home','#', class: 'navbar-brand'%>
+
           </div>
           <div class="nav-right">
             <ul class="navbar-nav flex-row w-100">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link"
-                  ><i class="far fa-user"></i
-                ></a>
+              <%= link_to('#') do%>
+              <i class="far fa-user"></i> <% end %>
               </li>
               <li class="nav-item">
-                <a href="./index.html" class="nav-link hidden">Home</a>
+              <%= link_to 'Home', '#', class: 'nav-link hidden'%>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-home"></i></a>
+              <%= link_to('#') do%>
+                <i class="fas fa-home"></i><%end%>
               </li>
 
               <li class="nav-item">
@@ -34,13 +34,14 @@
                     Houses
                   </button>
                   <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item text-dark">Buy</a>
-                    <a href="#" class="dropdown-item text-dark">Rent</a>
+                    <%= link_to 'Buy', '#', class: 'dropdown-item text-dark'%>
+                    <%= link_to 'Rent', '#', class: 'dropdown-item text-dark'%>
                   </div>
                 </div>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link"><i class="fas fa-building"></i></a>
+                <%= link_to('#') do%>
+                  <i class="fas fa-building"></i><%end%>
               </li>
 
               <li class="nav-item">
@@ -53,8 +54,8 @@
                     Condos
                   </button>
                   <div class="dropdown-menu">
-                    <a href="#" class="dropdown-item text-dark"> Buy</a>
-                    <a href="#" class="dropdown-item text-dark">Rent</a>
+                    <%= link_to 'Buy', '#', class: 'dropdown-item text-dark'%>
+                    <%= link_to 'Rent', '#', class: 'dropdown-item text-dark'%>
                   </div>
                 </div>
               </li>
@@ -73,8 +74,12 @@
                 ></a>
               </li>
               <li class="nav-item">
-                <a href="./sign-up.html" class="nav-link hidden">Sign-up</a>
+                <%= link_to 'Sign-up', signup_path, class: 'nav-link hidden'%>
               </li>
+              <li class="nav-item">
+              <%= link_to 'Contact', contact_path, class: 'nav-link hidden'%>  </li>
+              <li class="nav-item">
+              <%= link_to 'About', about_path, class: 'nav-link hidden'%>  </li>
             </ul>
           </div>
         </nav>
