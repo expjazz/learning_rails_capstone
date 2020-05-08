@@ -9,6 +9,7 @@ gem 'turbolinks', '5.2.0'
 gem 'jbuilder',   '2.9.1'
 gem 'bootsnap',   '1.4.5', require: false
 gem 'bootstrap', '~> 4.4.1'
+gem 'bcrypt', '3.1.13'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
