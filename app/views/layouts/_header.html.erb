@@ -5,9 +5,9 @@
           class="navbar navbar-expand-md position-fixed w-100 flex-column flex-md-row justify-content-between"
         >
           <div class="nav-left">
-          <%= link_to image_tag("logo.svg", alt: 'logo'), '#', class: 'navbar_brand'%>
+          <%= link_to image_tag("logo.svg", alt: 'logo'), root_path, class: 'navbar_brand'%>
 
-        <%= link_to 'Dream Home','#', class: 'navbar-brand'%>
+        <%= link_to 'Dream Home',root_path, class: 'navbar-brand'%>
 
           </div>
           <div class="nav-right">
@@ -17,7 +17,10 @@
               <i class="far fa-user"></i> <% end %>
               </li>
               <li class="nav-item">
-              <%= link_to 'Home', '#', class: 'nav-link hidden'%>
+                <%= link_to 'See all aptos for sale', apartments_path, class: 'nav-link hidden'%>
+              </li>
+              <li class="nav-item">
+              <%= link_to 'Home', root_path, class: 'nav-link hidden'%>
               </li>
               <li class="nav-item">
               <%= link_to('#') do%>
@@ -68,6 +71,10 @@
               <li class="nav-item">
                 <a href="#" class="nav-link hidden">Sign-In</a>
               </li>
+              <li class="nav-item">
+                <%= link_to 'Sell', new_apartment_path, class: 'nav-link hidden'%>
+              </li>
+
               <li class="nav-item">
                 <a href="./sign-up.html" class="nav-link"
                   ><i class="fas fa-user-plus"></i

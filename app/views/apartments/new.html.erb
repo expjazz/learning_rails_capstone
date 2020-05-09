@@ -5,6 +5,14 @@
 </div>
 <div class="row">
     <div class="col-9 mx-auto">
+      <% if @apartment.errors.any? %>
+        <h2 class="h3 text-red">The following errors prevented you from creating your announce correctly</h2>
+        <% @apartment.errors.full_messages.each do |msg| %>
+          <ul>
+            <li class="text-red"> <%= msg %> </li>
+          </ul>
+        <% end %>
+      <% end %>
         <%= form_with(model: @apartment, local: true, class: 'w-50 mx-auto') do |f|%>
           <div class="form-group">
             <%= f.label :adress %>

@@ -6,8 +6,13 @@ class ApartmentsController < ApplicationController
   end
 
   def create
-    @apartment = Apartment.new(user_params)
-    redirect_to @apartment if @apartment.save
+    @apartment = Apartment.new(apt_params)
+    if @apartment.save
+      flash[:notice] = 'Announce was created successfully'
+      redirect_to @apartment
+    else
+      render 'new'
+    end
   end
 
   def index
@@ -18,9 +23,29 @@ class ApartmentsController < ApplicationController
     @apartment = Apartment.find(params[:id])
   end
 
+  def update
+    @apartment = Apartment.new(apt_params)
+    if @apartment.save
+      flash[:notice] = 'Anounce was updated successfully'
+      redirect_to @apartment
+    else
+      render 'edit'
+    end
+  end
+
+  def edit
+    @apartment = Apartment.find(params[:id])
+  end
+
+  def destroy
+    @apartment = Apartment.find(params[:id])
+    @apartment.destroy
+    redirect_to apartments_path
+  end
+
   private
 
-  def user_params
+  def apt_params
     params.require(:apartment).permit(:adress, :price)
   end
 end

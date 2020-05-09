@@ -20,10 +20,19 @@
                         <th scope='row'> <%= apartment.id%> </th>
                         <td> <%= apartment.adress%> </td>
                         <td> <%= apartment.price %> </td>
-                        <td>Placeholder</td>
+                        <td> <%= link_to 'Show', apartment_path(apartment.id) %> </td>
+                        <td> <%= link_to 'Edit', edit_apartment_path(apartment.id) %> </td>
+                        <td> <%= link_to 'Delete', apartment_path(apartment.id), method: :delete, data: { confirm: 'Are you sure? '} %> </td>
                     </tr>
                 <% end %>
             </tbody>
         </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="create_apt">
+            <%= link_to 'Sell', new_apartment_path, class: 'text-red bg-light btn' %>
+        </div>
     </div>
 </div>
