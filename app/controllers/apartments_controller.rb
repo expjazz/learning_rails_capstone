@@ -7,6 +7,7 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apt_params)
+    @apartment.user = User.first
     if @apartment.save
       flash[:notice] = 'Announce was created successfully'
       redirect_to @apartment
