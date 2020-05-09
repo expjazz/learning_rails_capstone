@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-12">
+        <h3 class="h6">Here is a list of all apts we have for sale:</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope='col'> # </th>
+                    <th scope='col'> Adress </th>
+                    <th scope='col'> Price </th>
+                    <th scope='col'> Operation </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @apartments.each do |apartment| %>
+                    <tr>
+                        <th scope='row'> <%= apartment.id%> </th>
+                        <td> <%= apartment.adress%> </td>
+                        <td> <%= apartment.price %> </td>
+                        <td>Placeholder</td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
