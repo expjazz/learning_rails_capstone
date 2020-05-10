@@ -1,24 +1,64 @@
-# README
+# Microverse HTML and CSS Capstone Project - Testing with Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- I'm learning Ruby on Rails and using what I learn to apply in my Microverse capstone project described below.
+  As for the last update, the user can Sign up and put an house or apartment for sale. The project is in progress and will get more updates as I learn new things.
 
-Things you may want to cover:
+> Capstone projects are solo projects at the end of the each of the Microverse Main Technical Curriculum sections. It is a real-world-like project built with business specifications. In this case, the goal was to build a personalized paged based on [this](https://www.behance.net/gallery/25563385/PatashuleKE) layout.
 
-* Ruby version
+## First Page
 
-* System dependencies
+![screenshot](./images/screenshot.png)
 
-* Configuration
+## Built With
 
-* Database creation
+- HTML 5 and CSS 3.
+- Font awesome.
+- Bootstrap 4.
+- Flexbox.
+- Css grid system.
 
-* Database initialization
+## Live Demo
 
-* How to run the test suite
+[Live Demo Link](https://rawcdn.githack.com/expjazz/capstone-project/54c1b46926b375925275a24f90f56943ab678f36/index.html)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Video Description
 
-* Deployment instructions
+- Here is a brief video explaining the features of the project.
 
-* ...
+[Video](https://www.loom.com/share/b7e76743e7e74e339bd414b1b2f12414)
+
+### Prerequisites
+
+Having a web browser, code editor and git.
+
+### Install
+
+Just fork it and open in your browser and are good to go.
+
+## Author
+
+👤 **Expedito Andrade**
+
+- Github: [@githubexpjazz](https://github.com/expjazz)
+- Twitter: [@expjazz](https://twitter.com/expeditoandrade13)
+- Linkedin: [Expedito Andrade](https://www.linkedin.com/in/expedito-andrade-3645151a4/)
+- Email: (expeditojazz@gmail.com)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Credits
+
+- Design Created by Mather Njuguna and Sam Achola on behance.
+- See the Design Template on behance
+
+## 📝 License
+
+This project is [MIT](./LICENSE) licensed.
