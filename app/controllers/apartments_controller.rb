@@ -17,7 +17,7 @@ class ApartmentsController < ApplicationController
   end
 
   def index
-    @apartments = Apartment.all
+    @apartments = Apartment.paginate(page: params[:page], per_page: 5)
   end
 
   def show
@@ -26,7 +26,7 @@ class ApartmentsController < ApplicationController
 
   def update
     @apartment = Apartment.new(apt_params)
-    if @apartment.save
+    if @apartment.update
       flash[:notice] = 'Anounce was updated successfully'
       redirect_to @apartment
     else

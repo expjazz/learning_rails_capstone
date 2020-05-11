@@ -7,3 +7,9 @@
 <p class="text-muted"> <%= @user.email%> </p></div>
 </div>
 </div></div>
+<div class="row">
+  <div class="col-9">
+   <%= link_to 'Edit your profile', edit_user_path %>
+  </div>
+</div>
+<%= render 'apartments/apartments'%>

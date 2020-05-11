@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope='col'> # </th>
+                    <th scope='col'> Adress </th>
+                    <th scope='col'> Price </th>
+                    <th scope='col'> Owner</th>
+                    <th scope='col'> Operation </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @apartments.each do |apartment| %>
+                    <tr>
+                        <th scope='row'> <%= apartment.id%> </th>
+                        <td> <%= apartment.adress%> </td>
+                        <td> <%= apartment.price %> </td>
+                        <td> <%= apartment.user.email %> </td>
+                        <td> <%= link_to 'Show', apartment_path(apartment.id) %> </td>
+                        <td> <%= link_to 'Edit', edit_apartment_path(apartment.id) %> </td>
+                        <td> <%= link_to 'Delete', apartment_path(apartment.id), method: :delete, data: { confirm: 'Are you sure? '} %> </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>

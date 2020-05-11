@@ -1,7 +1,7 @@
 <div class="row">
-    <div class="col-12">
-        <h3 class="h6">Here is a list of all apts we have for sale:</h3>
-    </div>
+  <div class="col-9 mx-auto">
+    <h4 class="h6">Here is a list of all Users</h4>
+  </div>
 </div>
 <div class="apple_pagination">
     <div class="page_info">
@@ -9,13 +9,16 @@
     </div>
       <%= will_paginate @users %>
   </div>
-<%= render 'apartments'%>
+
 <div class="row">
-    <div class="col-12">
-        <div class="create_apt">
-            <%= link_to 'Sell', new_apartment_path, class: 'text-red bg-light btn' %>
-        </div>
-    </div>
+  <div class="col-12">
+    <% @users.each do |user| %>
+
+      <p> <%= user.name%> </p>
+      <small class="text-muted"> <%= user.email%> </small>
+      <%= link_to "Show info", user_path(user), class: "text-muted" %>
+    <% end %>
+  </div>
 </div>
 <div class="apple_pagination">
     <div class="page_info">
