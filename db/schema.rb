@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_184409) do
+ActiveRecord::Schema.define(version: 2020_05_15_201231) do
 
   create_table "apartment_tags", force: :cascade do |t|
     t.integer "apartment_id"
@@ -39,6 +39,14 @@ ActiveRecord::Schema.define(version: 2020_05_15_184409) do
     t.integer "user_id"
   end
 
+  create_table "inbox_messages", force: :cascade do |t|
+    t.string "body"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "send_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "body"
   end
@@ -49,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_05_15_184409) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
+    t.string "inbox"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

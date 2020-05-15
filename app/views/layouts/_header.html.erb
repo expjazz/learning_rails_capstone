@@ -43,6 +43,8 @@
                 <li class="nav-item dropdown">
                   <%= link_to current_user.name, '#', class: "nav-link dropdown-toggle", id:"navbarDropdown", role: "button", "data-toggle" => "dropdown" %>
                     <div class="dropdown-menu bg-danger" aria-labelledby="navbarDropdown">
+                     <%= link_to 'Profile', user_path(current_user), class: 'dropdown-item' %>
+
                       <%= link_to 'Edit', edit_user_path(current_user), class: 'dropdown-item text-black' %>
                       <%= link_to 'Delete', user_path(current_user), class: 'dropdown-item', method: :delete, data: { confirm: 'Are you sure?'} %>
 

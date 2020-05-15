@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-9">
+    <h4>Post here your message to  <%= @user.name %> </h4>
+       <%= form_with(model: @inbox_message, local: true, class: 'w-50 mx-auto') do |f|%>
+          <div class="form-group">
+            <%= f.label :body %>
+            <%= f.text_field :adress, class: 'form-control'%>
+          </div>
+
+          <%= f.submit 'Send', class: 'btn d-block bg-dark text-red mx-auto'%>
+        <% end %>
+
+
+  </div>
+</div>

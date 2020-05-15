@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get '/search', to: 'static_pages#search'
   get '/contact', to: 'static_pages#contact'
   get '/signup', to: 'users#new'
-  resources :users
+  resources :users do
+    resources :inbox_messages
+  end
   resources :apartments do
     resources :comments
   end

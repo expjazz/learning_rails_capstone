@@ -28,6 +28,11 @@
     </div>
 </div>
 <div class="row">
+  <div class="col-12">
+    <%= link_to 'Send a DM to the user', new_user_inbox_message_path(@apartment.user) %>
+  </div>
+</div>
+<div class="row">
     <div class="col-12">
         <%= link_to 'Here you can check all apartments for sale', apartments_path, class: 'text-red'%>
     </div>
