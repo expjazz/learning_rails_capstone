@@ -15,6 +15,7 @@
         <p>
           Here is the price: <%= @apartment.price %>
         </p>
+        <% if @apartment.bedroom %>
         <p>
           The apartment has <%= 'one bedroom' if @apartment.bedroom.one %>
                             <%= 'two bedrooms' if @apartment.bedroom.two %>
@@ -23,6 +24,7 @@
                             <%= 'five bedrooms' if @apartment.bedroom.five%>
                             <%= 'six bedrooms' if @apartment.bedroom.six %>
         </p>
+        <% end %>
     </div>
 </div>
 <div class="row">
@@ -33,7 +35,23 @@
 
 <div class="row">
   <div class="col-8">
-    Want to ask something? Left a message for the owner.
+    <p class="text-red"> Like? Left a comment sharing your opnion.</p>
+  </div>
+</div>
+ <%= form_with(model: [ @apartment, Comment.new ]) do |f| %>
+  <div class="form-group">
+    <%= f.label :comments%>
+    <%= f.text_area :body %>
+    <%= f.submit%>
+  </div>
+  <% end %>
+<div class="row">
+  <div class="comments d-flex flex-column">
+    <% @apartment.comments.each do |comment| %>
+         <div class="unit">
+  <%= comment.body %>    </div>
+
+    <% end %>
   </div>
 </div>
 
