@@ -50,6 +50,6 @@ class ApartmentsController < ApplicationController
   private
 
   def apt_params
-    params.require(:apartment).permit(:adress, :price)
+    params.require(:apartment).permit(:adress, :price, tag_ids: [])
   end
 end

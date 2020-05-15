@@ -26,6 +26,9 @@
         <%= f.label :bedrooms %>
         <%= select(:bedroom, :number, [[1, 'one'], [2, 'two'], [3, 'three'], [4, 'four'], [5, 'five'], [6, 'six']]) %>
           </div>
+        <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :body do |cb| %>
+      <% cb.label {cb.check_box} + cb.text %>
+    <% end %>
           <%= f.submit 'I want to sell my apartment', class: 'btn d-block bg-dark text-red mx-auto'%>
         <% end %>
     </div>

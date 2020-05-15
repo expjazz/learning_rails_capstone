@@ -34,8 +34,14 @@
 </div>
 
 <div class="row">
+
   <div class="col-8">
     <p class="text-red"> Like? Left a comment sharing your opnion.</p>
+  </div>
+    <div class="col-3">
+    <% @apartment.tags.each do |tag| %>
+        <p>  <%= tag.body %> </p>
+    <% end %>
   </div>
 </div>
  <%= form_with(model: [ @apartment, Comment.new ]) do |f| %>
