@@ -18,8 +18,11 @@
                         <td> <%= apartment.price %> </td>
                         <td> <%= apartment.user.email %> </td>
                         <td> <%= link_to 'Show', apartment_path(apartment.id) %> </td>
+                        <% if logged_in? && current_user == apartment.user %>
+                        
                         <td> <%= link_to 'Edit', edit_apartment_path(apartment.id) %> </td>
                         <td> <%= link_to 'Delete', apartment_path(apartment.id), method: :delete, data: { confirm: 'Are you sure? '} %> </td>
+                        <% end %>
                     </tr>
                 <% end %>
             </tbody>

@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
 class ApartmentsController < ApplicationController
+  before_action :require_user, except: %i[show index]
   def new
     @apartment = Apartment.new
   end
 
   def create
     @apartment = Apartment.new(apt_params)
-    @apartment.user = User.first
+    @apartment.user = current_user
     if @apartment.save
       flash[:notice] = 'Announce was created successfully'
       redirect_to @apartment

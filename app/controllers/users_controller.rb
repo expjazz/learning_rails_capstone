@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
+  before_action :require_user, only: %i[edit update destroy]
   def new
     @user = User.new
   end
@@ -14,6 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'Welcome to Dream Homes'
+      session[:user_id] = @user.id
       redirect_to @user
     else
       render 'new'
@@ -32,6 +34,14 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    require_user
+    @user = current_user
+    @user.destroy
+    session[:user_id] = nil
+    redirect_to root_path
   end
 
   def index
