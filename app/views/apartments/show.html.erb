@@ -15,6 +15,14 @@
         <p>
           Here is the price: <%= @apartment.price %>
         </p>
+        <p>
+          The apartment has <%= 'one bedroom' if @apartment.bedroom.one %>
+                            <%= 'two bedrooms' if @apartment.bedroom.two %>
+                            <%= 'three bedrooms' if @apartment.bedroom.three %>
+                            <%= 'four bedrooms' if @apartment.bedroom.four %>
+                            <%= 'five bedrooms' if @apartment.bedroom.five%>
+                            <%= 'six bedrooms' if @apartment.bedroom.six %>
+        </p>
     </div>
 </div>
 <div class="row">

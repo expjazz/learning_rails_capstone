@@ -8,6 +8,8 @@ class ApartmentsController < ApplicationController
 
   def create
     @apartment = Apartment.new(apt_params)
+    bedroom = Bedroom.find_by(params[:bedroom][:number])
+    bedroom.apartments << @apartment
     @apartment.user = current_user
     if @apartment.save
       flash[:notice] = 'Announce was created successfully'

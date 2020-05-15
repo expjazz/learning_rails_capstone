@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_142742) do
+ActiveRecord::Schema.define(version: 2020_05_15_143638) do
 
   create_table "apartments", force: :cascade do |t|
     t.string "adress"
     t.integer "price"
     t.integer "user_id"
+    t.integer "bedroom_id"
   end
 
   create_table "bedrooms", force: :cascade do |t|
