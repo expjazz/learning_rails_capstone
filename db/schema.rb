@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_15_143638) do
+ActiveRecord::Schema.define(version: 2020_05_15_154545) do
 
   create_table "apartments", force: :cascade do |t|
     t.string "adress"
@@ -26,6 +26,12 @@ ActiveRecord::Schema.define(version: 2020_05_15_143638) do
     t.boolean "four"
     t.boolean "five"
     t.boolean "six"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "body"
+    t.integer "apartment_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

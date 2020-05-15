@@ -7,7 +7,7 @@
 <div class="row">
     <div class="col-5 mx-auto">
         <p>
-           Here is the adress of your place: <%= @apartment.adress%> 
+           Here is the adress this product: <%= @apartment.adress%> 
         </p>
         <p>
           Here is your info for contact related to the sell : <%= @apartment.user.email %>
@@ -30,3 +30,10 @@
         <%= link_to 'Here you can check all apartments for sale', apartments_path, class: 'text-red'%>
     </div>
 </div>
+
+<div class="row">
+  <div class="col-8">
+    Want to ask something? Left a message for the owner.
+  </div>
+</div>
+
