@@ -13,3 +13,21 @@
   </div>
 </div>
 <%= render 'apartments/apartments'%>
+<div class="row">
+  <div class="col-9 mx-auto">
+    <h3 class="h4 display-5">
+      Here are your DMs
+    </h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-10 mx-auto">
+    <div class="cont d-flex flex-column">
+      <% @inbox.each do |msg| %>
+      <% sent = User.find(msg.send_id) if msg.send_id != nil %>
+      <p>User: <%= sent.name if msg.send_id  != nil%> </p>
+       <p><%= msg.body %></p> 
+      <% end %>
+    </div>
+  </div>
+</div>

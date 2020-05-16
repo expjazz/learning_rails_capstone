@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    same_user(params[:id])
     @user = User.find(params[:id])
+    @inbox = @user.inbox_messages
     @apartments = @user.apartments
   end
 
@@ -23,10 +25,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    same_user(params[:id])
     @user = User.find(params[:id])
   end
 
   def update
+    same_user(params[:id])
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:success] = 'Welcome to Dream Homes'
