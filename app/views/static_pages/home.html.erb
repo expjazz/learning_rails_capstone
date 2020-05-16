@@ -241,41 +241,7 @@
               <h5 class="h6 text-center text-red my-5">See houses in London</h5>
             </div>
           </div>
-          <div class="row px-3">
-           <% @aparment_list.each do |apt| %>
-
-            <div class="col-lg-3 col-md-6 col-sm-12">
-              <div class="card card flex-row flex-md-column">
-                <%= image_tag apt.images[0], class: "card-img-top" %>
-                <div class="card-body">
-                  <p class="legend">House</p>
-                  
-                  <h6 class="card-subtitle font-weight-bold">Baker Street</h6>
-                  <h6 class="card-subtitle">221B Center</h6>
-                  <div class="meters d-flex flex-wrap flex-md-nowrap">
-                    <small class="text-muted mr-3"
-                      ><i class="fas-fa-bars"></i>42 meters</small
-                    >
-                    <small class="text-muted"
-                      ><i class="fas-fa-bars"></i>4 bedrooms</small
-                    >
-                  </div>
-                  <div class="bottom d-md-flex justify-content-between">
-                    <div class="left d-flex flex-column">
-                      <small class="text-muted">rent for $4000</small>
-                      <p class="font-weight-bold">rent plus taxes for $5000</p>
-                    </div>
-                    <div
-                      class="left d-flex align-self-center flex-wrap flex-md-nowrap"
-                    >
-                      <a href="#"> <i class="fas fa-trash"></i> </a>
-                      <a href="#"> <i class="far fa-heart"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        <% end %>
-
-          </div>
+         <%# <% if !@apartments_list.empty?%> %>
+          <%# <%= render 'apartments/listsmall'%>  %>
+          <%# <% end %>  %>
         </section>

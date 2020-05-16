@@ -22,6 +22,26 @@
             <%= f.label :price %>
             <%= f.text_field :price, class: 'form-control' %>
           </div>
+          <div class="form-group">
+            <%= f.label :city%>
+            <%= f.text_field :city, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.label :neighborhood%>
+            <%= f.text_field :neighborhood, class: 'form-control' %>
+          </div> 
+          <div class="form-group">
+            <%= f.label :size %>
+            <%= f.text_field :size, class: 'form-control' %>
+          </div>        
+        <div class="form-group">
+        <%= f.label :pets %>
+        <%= select(:pets, :number, [['Allowed', true], ['Not Allowed',  false]]) %>
+        </div>
+        <div class="form-group">
+        <%= f.label :pool %>
+        <%= select(:pool, :number, [['Yes', true], ['No',  false]]) %>
+        </div>
         <div class="form-group">
         <%= f.label :bedrooms %>
         <%= select(:bedroom, :number, [[1, 'one'], [2, 'two'], [3, 'three'], [4, 'four'], [5, 'five'], [6, 'six']]) %>
