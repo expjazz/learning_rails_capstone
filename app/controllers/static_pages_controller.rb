@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @apartments_list = Apartment.all
+  end
 
   def help; end
 

@@ -29,6 +29,8 @@
         <%= f.collection_check_boxes :tag_ids, Tag.all, :id, :body do |cb| %>
       <% cb.label {cb.check_box} + cb.text %>
     <% end %>
+                <%= f.file_field :images, multiple: true  %>
+
           <%= f.submit 'I want to sell my apartment', class: 'btn d-block bg-dark text-red mx-auto'%>
         <% end %>
     </div>

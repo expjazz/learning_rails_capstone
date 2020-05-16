@@ -63,6 +63,20 @@
   <%= comment.body %>    </div>
 
     <% end %>
+
+
+
   </div>
 </div>
+    <div class="row">
+      <div class="col-9 mx-auto">
+          Here some images
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <%= image_tag @apartment.images[0] if @apartment.images.attached? %>
+      </div>
+    </div>
 

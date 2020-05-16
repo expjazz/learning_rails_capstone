@@ -7,7 +7,9 @@ class ApartmentsController < ApplicationController
   end
 
   def create
+    byebug
     @apartment = Apartment.new(apt_params)
+    @apartment.images.attach(params[:apartment][:images])
     bedroom = Bedroom.find_by(params[:bedroom][:number])
     bedroom.apartments << @apartment
     @apartment.user = current_user
@@ -50,6 +52,6 @@ class ApartmentsController < ApplicationController
   private
 
   def apt_params
-    params.require(:apartment).permit(:adress, :price, tag_ids: [])
+    params.require(:apartment).permit(:adress, :price, :images, tag_ids: [])
   end
 end
