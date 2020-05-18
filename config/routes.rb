@@ -14,6 +14,12 @@ Rails.application.routes.draw do
   resources :apartments do
     resources :comments
   end
+  post '/likes', to: 'likes#create'
+
+  resources :apartments do
+    resources :likes
+  end
+
   resources :tags
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

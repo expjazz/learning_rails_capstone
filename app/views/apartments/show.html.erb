@@ -64,6 +64,18 @@
 
     <% end %>
 
+<div class="row">
+  <div class="col-12">
+    <h1> Here are the likes</h1>
+    <% love_count = 0 %>
+    <% @apartment.likes.each do |like| %>
+      <%love_count += like.reference.love_count if !like.reference.love_count.nil? %> 
+    <% end %>
+
+          <p> People who loved: <%= love_count%>  </p>    
+
+  </div>
+</div>
 
 
   </div>

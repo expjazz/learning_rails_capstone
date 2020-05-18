@@ -3,6 +3,7 @@
 class StaticPagesController < ApplicationController
   def home
     @apartments_list = Apartment.all
+    @like = Like.new
   end
 
   def help; end

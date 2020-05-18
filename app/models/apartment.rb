@@ -7,6 +7,7 @@ class Apartment < ApplicationRecord
   has_many :apartment_tags
   has_many :tags, through: :apartment_tags
   has_many_attached :images
+  has_many :likes
   validates :adress, presence: true, length: { minimum: 10, maximum: 100 }
   validates :price, presence: true
 end

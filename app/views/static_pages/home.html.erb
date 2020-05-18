@@ -241,7 +241,7 @@
               <h5 class="h6 text-center text-red my-5">See houses in London</h5>
             </div>
           </div>
-         <%# <% if !@apartments_list.empty?%> %>
-          <%# <%= render 'apartments/listsmall'%>  %>
-          <%# <% end %>  %>
+         <% if !@apartments_list.empty?%>
+          <%= render 'apartments/listsmall'%> 
+          <% end %>  
         </section>

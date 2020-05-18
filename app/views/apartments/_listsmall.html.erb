@@ -7,31 +7,50 @@
                 <div class="card-body">
                   <p class="legend">House</p>
                   
-                  <h6 class="card-subtitle font-weight-bold">Baker Street</h6>
-                  <h6 class="card-subtitle">221B Center</h6>
+                  <h6 class="card-subtitle font-weight-bold"> <%= apt.city %> </h6>
+                  
+                  <h6 class="card-subtitle">  <%= apt.adress %> </h6>
                   <div class="meters d-flex flex-wrap flex-md-nowrap">
                     <small class="text-muted mr-3"
-                      ><i class="fas-fa-bars"></i>42 meters</small
+                      ><i class="fas-fa-bars"></i> <%= apt.size %> </small
                     >
                     <small class="text-muted"
-                      ><i class="fas-fa-bars"></i>4 bedrooms</small
+                      ><i class="fas-fa-bars"></i> 
+                              <% if apt.bedroom %>
+        <p>
+                             <%= '1 bedroom' if apt.bedroom.one %>
+                            <%= '2 bedrooms' if apt.bedroom.two %>
+                            <%= '3 bedrooms' if apt.bedroom.three %>
+                            <%= '4 bedrooms' if apt.bedroom.four %>
+                            <%= '5 bedrooms' if apt.bedroom.five%>
+                            <%= '6 bedrooms' if apt.bedroom.six %>
+        </p>
+        <% end %>
+    </div>
+                      
+                      
+                       </small
                     >
                   </div>
                   <div class="bottom d-md-flex justify-content-between">
                     <div class="left d-flex flex-column">
-                      <small class="text-muted">rent for $4000</small>
-                      <p class="font-weight-bold">rent plus taxes for $5000</p>
+                      <small class="text-muted"> Buy only for R$<%= apt.price%> </small>
+                      <% apt.tags.each do |tag| %>
+                      <p class="font-weight-bold"> <%= tag.body %> </p>
+                      <% end %>
                     </div>
                     <div
                       class="left d-flex align-self-center flex-wrap flex-md-nowrap"
                     >
+                    <%= link_to 'love', likes_path(love_count: 1, apt_id: apt.id), method: :post %>
                       <a href="#"> <i class="fas fa-trash"></i> </a>
                       <a href="#"> <i class="far fa-heart"></i></a>
                     </div>
                   </div>
                 </div>
               </div>
+                      <% end %>
+
             </div>
-        <% end %>
 
           </div>
